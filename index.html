@@ -7,5 +7,21 @@
 </head>
 <body>
     <h1>Hello World!</h1>
+    <div style="text-align:center; margin-top:40px;">
+        <h2>Mini Game: Pengocok Dadu</h2>
+        <div id="dice" style="font-size:80px; margin:20px;">🎲</div>
+        <button onclick="rollDice()" style="font-size:20px; padding:10px 30px;">Kocok Dadu</button>
+        <div id="result" style="margin-top:20px; font-size:24px;"></div>
+    </div>
+    <script>
+        function rollDice() {
+            const dice = document.getElementById('dice');
+            const result = document.getElementById('result');
+            const number = Math.floor(Math.random() * 6) + 1;
+            const diceFaces = ['\u2680','\u2681','\u2682','\u2683','\u2684','\u2685'];
+            dice.textContent = diceFaces[number-1];
+            result.textContent = 'Angka yang keluar: ' + number;
+        }
+    </script>
 </body>
 </html>
